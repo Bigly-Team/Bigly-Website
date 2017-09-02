@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+  color: $text_color;
+}
+
+body {
+  font: 300 13px/1.6 BlinkMacSystemFont, sans-serif;
+  color: #444;
+  transition: all .4s .3s ease-in;
+  background-color: white;
+}
+
+body, html {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: $text_color;
+}
+
+h1{
+  font-weight: 500;
+  font-size: 2.4rem !important;
+}
+
+h2{
+  font-weight: 400;
+  font-size: 2.0rem;
+}
+p{
+  font-size: 1.6rem;
+  &.bigText{
+    font-weight: 500;
+    font-size: 8rem;
+    &.white{
+      color: white;
+      opacity: 0;
+      transform: rotate(90deg);
+      white-space: nowrap;
+      position: relative;
+      top: 137px;
+    }
+  }
+}
+a:visited{
+  color: #444;
+}
