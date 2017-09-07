@@ -10,10 +10,10 @@
     animation: dark-theme-background 1s both $animationCurve;
 
     .container {
-      p, a {
+      p, a, .wrapper:nth-of-type(1) svg g path {
         animation: dark-theme 1s both $animationCurve;
       }
-      .wrapper:nth-of-type(1), .wrapper:nth-of-type(2) {
+      .wrapper:nth-of-type(2) {
         svg, g, path {
           animation: dark-theme-svg 1s both $animationCurve;
         }
@@ -38,6 +38,8 @@
       animation-duration: $reveal-duration;
       animation-fill-mode: both;
       animation-timing-function: $animationCurve;
+      line-height: 11rem;
+      font-size: 10rem;
     }
   }
 }

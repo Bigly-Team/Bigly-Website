@@ -44,12 +44,12 @@
   }
 
   .typedText {
-    display: inline-block;
+    display: inline-block; // keeps left justified
     overflow: hidden;
     border-right: .15em solid black; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    letter-spacing: .05em;
     animation: typing 3.5s $animationDelay steps(40, end),
     blink-caret .75s step-end infinite;
   }
@@ -65,7 +65,7 @@
   }
 
   .wrapper {
-    margin: 2.5rem 1.5rem;
+    margin: 1.5rem;
 
     @media only screen and (max-width:768px) {
       animation-name: reveal-text;
@@ -94,10 +94,10 @@
     }
 
     .phoneContents {
-      width: 351px;
-      height: 626px;
+      width: 325px;
+      height: 600px;
       position: absolute;
-      margin: 10rem 3rem;
+      margin: 12rem 5rem;
     }
 
     &.bigly {

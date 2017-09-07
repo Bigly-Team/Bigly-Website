@@ -56,8 +56,7 @@ p {
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
       white-space: nowrap;
-      position: relative;
-      top: 137px; }
+      position: relative; }
 
 a:visited {
   color: #444; }
@@ -456,7 +455,7 @@ th {
     transform: rotate(0deg);
     top: 0; }
   100% {
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) scale(0.8);
     top: -200px;
     margin-bottom: -400px; } }
 
@@ -470,18 +469,15 @@ th {
 @keyframes dark-theme {
   0% {
     color: black;
-    fill: black;
-    stroke: black; }
+    fill: black; }
   100% {
     color: white;
-    fill: white;
-    stroke: white; } }
+    fill: white; } }
 
 @keyframes dark-theme-svg {
   0% {
     color: black;
-    fill: black;
-    stroke: black; }
+    fill: black; }
   100% {
     color: white;
     fill: white;
@@ -504,9 +500,9 @@ th {
       flex-direction: column; }
   .main.darkTheme {
     animation: dark-theme-background 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
-    .main.darkTheme .container p, .main.darkTheme .container a {
+    .main.darkTheme .container p, .main.darkTheme .container a, .main.darkTheme .container .wrapper:nth-of-type(1) svg g path {
       animation: dark-theme 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
-    .main.darkTheme .container .wrapper:nth-of-type(1) svg, .main.darkTheme .container .wrapper:nth-of-type(1) g, .main.darkTheme .container .wrapper:nth-of-type(1) path, .main.darkTheme .container .wrapper:nth-of-type(2) svg, .main.darkTheme .container .wrapper:nth-of-type(2) g, .main.darkTheme .container .wrapper:nth-of-type(2) path {
+    .main.darkTheme .container .wrapper:nth-of-type(2) svg, .main.darkTheme .container .wrapper:nth-of-type(2) g, .main.darkTheme .container .wrapper:nth-of-type(2) path {
       animation: dark-theme-svg 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
     .main.darkTheme .phoneContents {
       animation: dark-theme-background 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
@@ -523,10 +519,16 @@ th {
         animation-iteration-count: 1;
         animation-duration: 500ms;
         animation-fill-mode: both;
-        animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+        animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        line-height: 11rem;
+        font-size: 10rem; }
 
 .footer a {
   color: black; }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    text-align: center; } }
 
 @font-face {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -599,8 +601,7 @@ th {
     /* Keeps the content on a single line */
     margin: 0 auto;
     /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;
-    /* Adjust as needed */
+    letter-spacing: .05em;
     animation: typing 3.5s 1s steps(40, end), blink-caret 0.75s step-end infinite; }
   .container h1, .container h2, .container p {
     margin: 0; }
@@ -609,7 +610,7 @@ th {
     .container .email a {
       color: black; }
   .container .wrapper {
-    margin: 2.5rem 1.5rem; }
+    margin: 1.5rem; }
     @media only screen and (max-width: 768px) {
       .container .wrapper {
         animation-name: reveal-text;
@@ -632,10 +633,10 @@ th {
       .container .phone {
         display: block !important; } }
     .container .phone .phoneContents {
-      width: 351px;
-      height: 626px;
+      width: 325px;
+      height: 600px;
       position: absolute;
-      margin: 10rem 3rem; }
+      margin: 12rem 5rem; }
     .container .phone.bigly {
       position: relative;
       animation: phone-placement 1s both cubic-bezier(0.645, 0.045, 0.355, 1); }

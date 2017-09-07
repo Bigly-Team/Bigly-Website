@@ -48,7 +48,7 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
     top: 0;
   }
   100%{
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) scale(0.8);
     top: -200px;
     margin-bottom: -400px;
   }
@@ -68,12 +68,10 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
   0%{
     color: black;
     fill: black;
-    stroke: black;
   }
   100%{
     color: white;
     fill: white;
-    stroke: white;
   }
 }
 
@@ -81,7 +79,7 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
   0%{
     color: black;
     fill: black;
-    stroke: black;
+    //stroke: black;
   }
   100%{
     color: white;
