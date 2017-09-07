@@ -21,6 +21,7 @@
     setTimeout(function(){
       $('.phone').addClass('bigly');
       $('.main').addClass('darkTheme');
+      $('body').css('background-color', 'black');
     }, 6500);
   }
 
