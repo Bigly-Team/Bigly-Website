@@ -459,12 +459,29 @@ th {
     top: -200px;
     margin-bottom: -400px; } }
 
+@keyframes phone-placement-R {
+  0% {
+    transform: rotate(-90deg) scale(0.8);
+    top: -200px;
+    margin-bottom: -400px; }
+  100% {
+    transform: rotate(0deg);
+    top: 0; } }
+
 @keyframes dark-theme-background {
   0% {
     background-color: white; }
   100% {
     background-color: black;
     color: white; } }
+
+@keyframes light-theme-background {
+  0% {
+    background-color: black;
+    color: white; }
+  100% {
+    background-color: white;
+    color: black; } }
 
 @keyframes dark-theme {
   0% {
@@ -474,6 +491,14 @@ th {
     color: white;
     fill: white; } }
 
+@keyframes light-theme {
+  0% {
+    color: white;
+    fill: white; }
+  100% {
+    color: black;
+    fill: black; } }
+
 @keyframes dark-theme-svg {
   0% {
     color: black;
@@ -482,6 +507,16 @@ th {
     color: white;
     fill: white;
     stroke: white; } }
+
+@keyframes light-theme-svg {
+  0% {
+    color: white;
+    fill: white;
+    stroke: white; }
+  100% {
+    color: black;
+    fill: black;
+    stroke: black; } }
 
 .nav ul {
   list-style: none; }
@@ -522,6 +557,27 @@ th {
         animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
         line-height: 11rem;
         font-size: 10rem; }
+  .main.lightTheme {
+    animation: light-theme-background 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+    .main.lightTheme .container p, .main.lightTheme .container a, .main.lightTheme .container .wrapper:nth-of-type(1) svg g path {
+      animation: light-theme 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+    .main.lightTheme .container .wrapper:nth-of-type(2) svg, .main.lightTheme .container .wrapper:nth-of-type(2) g, .main.lightTheme .container .wrapper:nth-of-type(2) path {
+      animation: light-theme-svg 1s both cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+    .main.lightTheme .phoneContents .typedText {
+      animation-delay: .5s; }
+    .main.lightTheme .phoneContents .bigText.white {
+      animation-name: hide-text;
+      animation-delay: .5s;
+      animation-iteration-count: 1;
+      animation-duration: 500ms;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      line-height: 11rem;
+      font-size: 10rem; }
+    .main.lightTheme .copyright .mobile {
+      display: block; }
+    .main.lightTheme .copyright .desktop {
+      display: none; }
 
 .footer a {
   color: black; }
@@ -640,6 +696,9 @@ th {
     .container .phone.bigly {
       position: relative;
       animation: phone-placement 1s both cubic-bezier(0.645, 0.045, 0.355, 1); }
+    .container .phone.ylgib {
+      position: relative;
+      animation: phone-placement-R 1s both cubic-bezier(0.645, 0.045, 0.355, 1); }
   .container .buttonRow {
     display: -ms-flexbox;
     display: flex;

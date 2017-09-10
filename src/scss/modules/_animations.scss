@@ -53,6 +53,18 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
     margin-bottom: -400px;
   }
 }
+@keyframes phone-placement-R {
+  0%{
+    transform: rotate(-90deg) scale(0.8);
+    top: -200px;
+    margin-bottom: -400px;
+  }
+  100%{
+    transform: rotate(0deg);
+    top: 0;
+  }
+}
+
 
 @keyframes dark-theme-background {
   0%{
@@ -63,6 +75,18 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
     color: white;
   }
 }
+@keyframes light-theme-background {
+  0%{
+    background-color: black;
+    color: white;
+  }
+  100%{
+    background-color: white;
+    color: black;
+  }
+}
+
+
 
 @keyframes dark-theme {
   0%{
@@ -74,16 +98,38 @@ $animationCurve: cubic-bezier(0.895, 0.03, 0.685, 0.22);
     fill: white;
   }
 }
+@keyframes light-theme {
+  0%{
+    color: white;
+    fill: white;
+  }
+  100%{
+    color: black;
+    fill: black;
+  }
+}
+
 
 @keyframes dark-theme-svg {
   0%{
     color: black;
     fill: black;
-    //stroke: black;
   }
   100%{
     color: white;
     fill: white;
     stroke: white;
+  }
+}
+@keyframes light-theme-svg {
+  0%{
+    color: white;
+    fill: white;
+    stroke: white;
+  }
+  100%{
+    color: black;
+    fill: black;
+    stroke: black;
   }
 }

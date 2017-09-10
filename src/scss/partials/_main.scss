@@ -20,28 +20,65 @@
       }
     }
 
-  .phoneContents {
-    animation: dark-theme-background 1s both $animationCurve;
+    .phoneContents {
+      animation: dark-theme-background 1s both $animationCurve;
 
-    .typedText {
-      animation-name: hide-text;
-      animation-delay: .5s;
-      animation-iteration-count: 1;
-      animation-duration: $reveal-duration;
-      animation-fill-mode: both;
-      animation-timing-function: $animationCurve;
-    }
-    .bigText.white {
-      animation-name: reveal-text;
-      animation-delay: .5s;
-      animation-iteration-count: 1;
-      animation-duration: $reveal-duration;
-      animation-fill-mode: both;
-      animation-timing-function: $animationCurve;
-      line-height: 11rem;
-      font-size: 10rem;
+      .typedText {
+        animation-name: hide-text;
+        animation-delay: .5s;
+        animation-iteration-count: 1;
+        animation-duration: $reveal-duration;
+        animation-fill-mode: both;
+        animation-timing-function: $animationCurve;
+      }
+      .bigText.white {
+        animation-name: reveal-text;
+        animation-delay: .5s;
+        animation-iteration-count: 1;
+        animation-duration: $reveal-duration;
+        animation-fill-mode: both;
+        animation-timing-function: $animationCurve;
+        line-height: 11rem;
+        font-size: 10rem;
+      }
     }
   }
-}
+
+  &.lightTheme{
+    animation: light-theme-background 1s both $animationCurve;
+    .container {
+      p, a, .wrapper:nth-of-type(1) svg g path {
+        animation: light-theme 1s both $animationCurve;
+      }
+      .wrapper:nth-of-type(2) {
+        svg, g, path {
+          animation: light-theme-svg 1s both $animationCurve;
+        }
+      }
+    }
+    .phoneContents {
+      .typedText {
+        animation-delay: .5s;
+      }
+      .bigText.white{
+        animation-name: hide-text;
+        animation-delay: .5s;
+        animation-iteration-count: 1;
+        animation-duration: $reveal-duration;
+        animation-fill-mode: both;
+        animation-timing-function: $animationCurve;
+        line-height: 11rem;
+        font-size: 10rem;
+      }
+    }
+    .copyright{
+      .mobile{
+        display: block;
+      }
+      .desktop{
+        display: none;
+      }
+    }
+  }
 
 }

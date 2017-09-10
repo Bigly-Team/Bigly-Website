@@ -104,6 +104,11 @@
       position: relative;
       animation: phone-placement 1s both cubic-bezier(0.645, 0.045, 0.355, 1);
     }
+    &.ylgib{
+      position: relative;
+      animation: phone-placement-R 1s  both cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
 
   }
 
