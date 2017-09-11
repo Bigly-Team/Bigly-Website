@@ -5,7 +5,9 @@
   var state = 0; //initial, 1 == turned
 
   var desktopState = 0; // initial is dark.
-  var ready = true;
+  var ready = false;
+
+  var scrollMagicController = new ScrollMagic.Controller();
 
   if(window.DeviceOrientationEvent){
     window.addEventListener("deviceorientation", orientation, false);
@@ -14,34 +16,63 @@
   }
 
 
+  if ( $('.phone').css('display') == 'block' ) { //if desktop
+    if ($( window ).height() < 850) {
+      console.log('settingScrollmagiv');
+      var scene = new ScrollMagic.Scene({
+        //triggerElement: '.phone',
+        offset: 100 /* offset the trigger 150px below #scene's top */
+      }).on('enter', function () {
+        console.log("passed trigger");
+        toggle(0);
+      }).on('leave', function () {
+        console.log("passed back");
+        toggle(1);
+      }).addTo(scrollMagicController);
+    }
 
-  if ( $('.phone').css('display') == 'block' ) {
     setTimeout(function(){
       dark();
       $('.phone').click(function(){
         toggle();
       });
+      ready = true;
     }, 6500);
   }
 
-  function toggle(){
+  function toggle(trigger){
+    console.log(ready);
     if (ready == false){
       // console.log('exiting');
       return;
     }
-    if (desktopState == 0) { //if dark make light
+    console.log(trigger);
+    if (trigger == 1) {
+      // console.log('trigger light' );
       invertDark();
       desktopState = 1;
-    } else {
+    } else if (trigger == 0) {
+      // console.log('trigger dark');
       dark();
       desktopState = 0;
     }
+    else if (desktopState == 0) { //if dark make light
+      // console.log('making light');
+      invertDark();
+      desktopState = 1;
+    } else if( desktopState == 1){
+      //console.log('making dark');
+      dark();
+      desktopState = 0;
+    }
+
+
     ready = false;
     setInterval(function(){
       // console.log(ready);
       // console.log('ready');
       ready = true;
-    },4500);
+    },500);
   }
 
   function dark(){
